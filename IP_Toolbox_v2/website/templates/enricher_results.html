@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block title %}Enrichment Results{% endblock %}{% block content%}
+
+<div style = "position:relative; left:-200px; top:2px;">
+<h1>Enricher Tool Results</h1>
+<br>
+<h4>Congratulations, your request has finished, please download using the link below.</h4>
+<a href="{{ url_for('views.download', outfilename=filename) }}" target="blank"><button class='btn btn-default'><b>When your file is ready you can download it here</b></a>
+</div>
+
+{% endblock %}

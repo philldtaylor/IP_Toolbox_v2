@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block title %}IP Enrichment Tool{% endblock %}{% block content%}
+
+<div style = "position:relative; left:-200px; top:2px;">
+<h1>Welcome to the IP Address enrichment tool</h1>
+<p>To use this tool you need to provide a list of IP addresses in a csv file, and specify a name for the output which also needs to be an excel document.</p>
+<p>The file needs to have a heading of 'IP' and a list of IP addresses in the rows beneath this heading, each IP address in its own cell. Additional columns are optional and the result columns will be appended next to these.
+</p>
+<p>
+    The tool can potentially take some time to run, please expect to wait around 5 minutes for every 100 IP addresses submitted.  When your request has been processed you will be redirected to a page where you download your results.
+</p>
+<strong>Remember both input file and output file name need to be in .csv format</strong></div>
+<br>
+<br>
+<div class="container">
+    <div class="card-deck mb-3">
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+          <h4 class="my-0 font-weight-normal text-center">Tool Parameters</h4>
+        </div>
+        <div class="card-body">
+            <form action="enricher_results" method="post" enctype="multipart/form-data">
+                <label for="file">Input File</label>
+                <input type="file" name="file" value="" required>
+                <br>
+                <br>
+                <label for="outputfile">Output Filename</label>
+                <input type="text" name="outputfile" value="" required>
+                <br>
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

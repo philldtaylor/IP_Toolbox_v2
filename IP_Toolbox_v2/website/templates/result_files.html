@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block title %}Enrichment Results{% endblock %}{% block content%}
+<h1 align="center">Result Files</h1>
+<ul class="list-group list-group-flush" id="notes">
+  {% for file in user.resultfiles %}
+  <li class="list-group-item">
+    {{ file.data }}
+    <a href="{{ url_for('views.download', outfilename=file.data) }}" target="blank"><button class='btn btn-default'><b>Download</b></a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
